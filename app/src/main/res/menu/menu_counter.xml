@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_overflow" android:title="More"
+        android:icon="@android:drawable/ic_menu_more"
+        app:showAsAction="always">
+        <menu>
+            <item android:id="@+id/action_reset_daily" android:title="Reset daily counter"/>
+            <item android:id="@+id/action_reset_lifetime" android:title="Reset lifetime counter"/>
+            <item android:id="@+id/action_log_manual" android:title="Log data manually"/>
+            <item android:id="@+id/action_view_history" android:title="View history"/>
+            <item android:id="@+id/action_set_background" android:title="Set background"/>
+            <item android:id="@+id/action_stealth" android:title="Enable stealth mode"/>
+            <item android:id="@+id/action_stealth_stop" android:title="Disable stealth mode"/>
+            <item android:id="@+id/action_settings" android:title="Settings"/>
+        </menu>
+    </item>
+</menu>

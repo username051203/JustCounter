@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/statsBlock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnCountSmall">
+
+        <TextView
+            android:id="@+id/tvSessionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvMode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ON-SCREEN MODE"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="3dp"
+            android:background="@drawable/bg_mode_badge"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/tvCurrentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+
+        <TextView android:id="@+id/tvToday"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0" android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tvTodayCycles"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="108 x 0" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+        <TextView android:id="@+id/tvLifetime"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="0" android:textColor="@color/white" android:textSize="14sp" android:textStyle="bold"
+            android:layout_marginTop="4dp"/>
+        <TextView android:id="@+id/tvLifetimeCycles"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="108 x 0" android:textColor="@color/text_secondary" android:textSize="12sp"/>
+    </LinearLayout>
+
+    <!-- Decrement button anchored above large button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCountSmall"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:text="-"
+        android:textSize="28sp"
+        android:backgroundTint="@color/amber_dark"
+        android:textColor="@color/white"
+        app:cornerRadius="32dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCountLarge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"/>
+
+    <!--
+        Circle button: uses width=0dp spanning full width,
+        height matches width via dimensionRatio so it stays a circle.
+        Capped at 240dp max via layout_constraintWidth_max.
+        Always visible even in smallest popup.
+    -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCountLarge"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:backgroundTint="@color/amber"
+        app:cornerRadius="999dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintWidth_max="240dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

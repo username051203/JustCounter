@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="4dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:text="Counter specific settings"
+                android:textColor="@color/amber"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView android:text="Counter name" android:textColor="@color/white"
+                android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCounterName"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView android:text="Size of 1 cycle/mala" android:textColor="@color/white"
+                android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCycleSize"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:text="Sound alert" android:textColor="@color/white" android:textSize="16sp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Give sound alert after end of a cycle"
+                        android:textColor="@color/text_secondary" android:textSize="13sp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchSoundAlert"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:text="Regular haptic feedback" android:textColor="@color/white" android:textSize="16sp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Vibrate on every key press"
+                        android:textColor="@color/text_secondary" android:textSize="13sp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchHapticRegular"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:text="Long haptic feedback" android:textColor="@color/white" android:textSize="16sp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Give long vibration after end of a cycle"
+                        android:textColor="@color/text_secondary" android:textSize="13sp"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchHapticLong"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SAVE"
+                android:backgroundTint="@color/amber"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
